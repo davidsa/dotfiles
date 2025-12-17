@@ -1,0 +1,14 @@
+* {
+  font-family: "DejaVuSansM Nerd Font", monospace;
+  font-size: 12px;
+}
+
+window#waybar {
+  background: rgba(30, 30, 46, 0.9);
+  color: #cdd6f4;
+}
+
+#workspaces button.active {
+  background: #89b4fa;
+  color: #1e1e2e;
+}

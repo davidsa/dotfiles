@@ -34,7 +34,7 @@ alias cl='clear'
 alias tn='tmux new -s (basename "$PWD")'
 
 alias ws='cd ~/workspace'
-alias dotfiles='cd ~/workspace/Dot-Files'
+alias dotfiles='cd ~/dotfiles'
 alias dps='docker ps -a'
 alias dcps='docker-compose ps'
 alias di='docker images'
