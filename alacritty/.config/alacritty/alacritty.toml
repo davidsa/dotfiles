@@ -45,8 +45,9 @@ multiplier = 3
 save_to_clipboard = true
 semantic_escape_chars = """,│`|:"' ()[]{}<>"""
 
+[window]
+opacity = 0.95
+
 [window.padding]
 x = 10
 y = 10
-
-[keyboard]
