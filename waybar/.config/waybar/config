@@ -25,8 +25,9 @@
   "network": {
     "format-wifi": " ",
     "format-ethernet": "󰈀",
-    "format-disconnected": "⚠",
-    "tooltip-format": "{essid}\n{ipaddr}" 
+    "format-disconnected": "󰖪",
+    "tooltip-format": "{essid}\n{ipaddr}",
+    "on-click":"~/.config/waybar/scripts/wifi-menu.fish"
   },
   "clock": {
     "format": "{:%I:%M%p %d/%m/%y}",
@@ -38,8 +39,7 @@
       "critical": 15
     },
     "format": "{icon}",
-    "format-charging": "󰂄 {icon}",
-    "format-plugged": "󰂄 {icon}",
+    "format-charging": "󰂄",
     "format-full": "󰁹",
     "tooltip-format": "{capacity}%",
     "format-icons": [
