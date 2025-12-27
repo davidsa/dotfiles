@@ -13,7 +13,8 @@
     "bluetooth",
     "battery",
     "backlight",
-    "clock"
+    "clock",
+    "custom/power"
   ],
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -25,7 +26,7 @@
     "on-click": "pavucontrol"
   },
   "network": {
-    "format-wifi": "  {signalStrength}%",
+    "format-wifi": " ",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
     "tooltip-format": "{essid}\n{ipaddr}",
@@ -47,7 +48,7 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon} {capacity}%",
+    "format": "{icon}",
     "format-charging": "󰂄",
     "format-full": "󰁹",
     "tooltip": false,
@@ -66,7 +67,7 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "󰃠 {percent}%",
+    "format": "󰃠 ",
     "tooltip": false,
     "scroll-step": 5
   },
@@ -74,4 +75,9 @@
     "format": "{:%I:%M%p %d/%m/%y}",
     "tooltip": false
   },
+  "custom/power": {
+    "format": "⏻",
+    "tooltip": false,
+    "on-click": "~/.config/waybar/scripts/power-menu.fish"
+  }
 }

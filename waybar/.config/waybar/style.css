@@ -1,6 +1,6 @@
 * {
   font-family: "DejaVuSansM Nerd Font", monospace;
-  font-size: 18px;
+  font-size: 16px;
   color: white;
 }
 
@@ -16,16 +16,11 @@ window#waybar {
   background: rgba(255,255,255,0.2);
 }
 
-#pulseaudio,
-#network,
-#battery,
-#clock {
-  margin: 0 10px;
+label {
+  margin: 0 15px;
 }
 
-#network {
-  background: transparent;
+tooltip label {
+  font-size: 14px;
 }
 
-#workspaces button.focus {
-}
