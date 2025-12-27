@@ -167,3 +167,4 @@ function mux
   tmuxinator $argv
 end 
 
+zoxide init fish | source
