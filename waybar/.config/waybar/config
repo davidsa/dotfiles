@@ -10,6 +10,8 @@
   "modules-right": [
     "pulseaudio",
     "network",
+    "bluetooth",
+    "",
     "battery",
     "clock"
   ],
@@ -23,25 +25,32 @@
     "on-click": "pavucontrol"
   },
   "network": {
-    "format-wifi": " ",
+    "format-wifi": "  {signalStrength}%",
     "format-ethernet": "󰈀",
     "format-disconnected": "󰖪",
     "tooltip-format": "{essid}\n{ipaddr}",
     "on-click":"~/.config/waybar/scripts/wifi-menu.fish"
   },
-  "clock": {
-    "format": "{:%I:%M%p %d/%m/%y}",
-    "tooltip": false
+  "bluetooth": {
+    "format": "󰂲",
+    "format-connected": "",
+    "format-connected-battery": " {device_battery_percentage}%",
+    "format-disabled": "󰂲",
+    "format-off": "󰂲",
+    "format-no-controller": "󰂲",
+    "tooltip-format": "{device_alias}",
+    "on-click": "~/.config/waybar/scripts/bluetooth-menu.fish",
+    "on-click-right": "~/.config/waybar/scripts/bluetooth-toggle.fish"
   },
   "battery": {
     "states": {
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}",
+    "format": "{icon} {capacity}%",
     "format-charging": "󰂄",
     "format-full": "󰁹",
-    "tooltip-format": "{capacity}%",
+    "tooltip": false,
     "format-icons": [
       "󰁺", 
       "󰁻", 
@@ -54,5 +63,9 @@
       "󰂂", 
       "󰁹"  
     ]
-  }
+  },
+  "clock": {
+    "format": "{:%I:%M%p %d/%m/%y}",
+    "tooltip": false
+  },
 }
