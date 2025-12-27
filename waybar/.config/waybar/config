@@ -11,14 +11,14 @@
     "pulseaudio",
     "network",
     "bluetooth",
-    "",
     "battery",
+    "backlight",
     "clock"
   ],
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰝟",
-    "tooltip-format": "{volume}%",
+    "tooltip": false,
     "format-icons": {
       "default": ["󰕿", "󰖀", "󰕾"]
     },
@@ -63,6 +63,12 @@
       "󰂂", 
       "󰁹"  
     ]
+  },
+  "backlight": {
+    "device": "intel_backlight",
+    "format": "󰃠 {percent}%",
+    "tooltip": false,
+    "scroll-step": 5
   },
   "clock": {
     "format": "{:%I:%M%p %d/%m/%y}",
