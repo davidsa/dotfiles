@@ -8,37 +8,37 @@ vim.keymap.set("n", "<leader>x", ":bd<CR>")
 
 -- Cursor moving between windows
 vim.keymap.set("n", "<C-h>", function()
-	vim.cmd.wincmd({ args = { "h" } })
-	vim.cmd.TmuxNavigateLeft()
+  vim.cmd.wincmd({ args = { "h" } })
+  vim.cmd.TmuxNavigateLeft()
 end)
 
 vim.keymap.set("n", "<C-j>", function()
-	vim.cmd.wincmd({ args = { "j" } })
-	vim.cmd.TmuxNavigateDown()
+  vim.cmd.wincmd({ args = { "j" } })
+  vim.cmd.TmuxNavigateDown()
 end)
 
 vim.keymap.set("n", "<C-k>", function()
-	vim.cmd.wincmd({ args = { "k" } })
-	vim.cmd.TmuxNavigateUp()
+  vim.cmd.wincmd({ args = { "k" } })
+  vim.cmd.TmuxNavigateUp()
 end)
 
 vim.keymap.set("n", "<C-l>", function()
-	vim.cmd.wincmd({ args = { "l" } })
-	vim.cmd.TmuxNavigateRight()
+  vim.cmd.wincmd({ args = { "l" } })
+  vim.cmd.TmuxNavigateRight()
 end)
 
 -- Sort
 vim.keymap.set("v", "<leader>s", ":sort<CR>")
 
 -- Lines
-vim.keymap.set("n", "§", ":m .-2<CR>==")
-vim.keymap.set("n", "¶", ":m .+1<CR>==")
+vim.keymap.set("n", "<M-k>", ":m .-2<CR>==")
+vim.keymap.set("n", "<M-j>", ":m .+1<CR>==")
 
-vim.keymap.set("v", "¶", ":m '>+1<CR>gv=gv")
-vim.keymap.set("v", "§", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<M-k>", ":m '<-2<CR>gv=gv")
+vim.keymap.set("v", "<M-j>", ":m '>+1<CR>gv=gv")
+
 
 vim.keymap.set("n", "J", "mzJ`z")
-
 vim.keymap.set("n", "n", "nzzzv")
 vim.keymap.set("n", "N", "Nzzzv")
 
