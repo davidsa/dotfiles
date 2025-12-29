@@ -18,7 +18,6 @@ set SPACEFISH_GIT_STATUS_COLOR FF9E64
 
 alias vim='nvim'
 
-alias l='ls -1'
 alias gs='git status'
 alias ga='git add .'
 alias gb='git switch -f (git branch | fzf | string trim)'
@@ -55,6 +54,24 @@ if not contains $_asdf_shims $PATH
     set -gx --prepend PATH $_asdf_shims
 end
 set --erase _asdf_shims
+
+# Replace ls with eza
+function ls
+    eza --group-directories-first --icons $argv
+end
+
+# Common shortcuts
+function ll
+    eza -l --group-directories-first --icons $argv
+end
+
+function la
+    eza -la --group-directories-first --icons $argv
+end
+
+function tree
+    eza --tree --level=2 --icons $argv
+end
 
 function pj
     # Use fzf to select a directory from ~/workspace excluding node_modules
