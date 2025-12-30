@@ -1,0 +1,57 @@
+
+@define-color sumiInk0 #16161D;  /* darkest */
+@define-color sumiInk1 #1F1F28;  /* main bg */
+@define-color sumiInk2 #2A2A37;  /* secondary bg */
+@define-color sumiInk3 #363646;  /* subtle highlight */
+
+@define-color fujiWhite  #DCD7BA; /* main text */
+@define-color oldWhite   #C8C093; /* secondary text */
+
+@define-color waveBlue1  #7E9CD8;
+
+window {
+    background-color: @sumiInk1;
+    border-radius: none;
+    padding: 8px;
+}
+
+#outer-box {
+    background-color: @sumiInk1;
+    border-radius: 8px;
+}
+
+#input {
+    color: @fujiWhite;
+    background-color: @sumiInk2;
+    border: 1px solid @sumiInk3;
+    padding: 6px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+#scroll {
+    background-color: @sumiInk1;
+}
+
+#entry {
+    color: @fujiWhite;
+    background-color: @sumiInk1;
+    padding: 5px 8px;
+}
+
+#text {
+    color: @oldWhite;
+}
+
+#entry:selected {
+    background-color: @waveBlue1;
+}
+
+#entry:selected #text {
+    color: @fujiWhite;
+}
+
+#input:selected {
+    color: @fujiWhite;
+    background-color: @waveBlue1;
+}
