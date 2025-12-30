@@ -9,10 +9,10 @@
   ],
   "modules-right": [
     "pulseaudio",
+    "backlight",
     "network",
     "bluetooth",
     "battery",
-    "backlight",
     "clock",
     "custom/power"
   ],
@@ -73,7 +73,12 @@
   },
   "backlight": {
     "device": "intel_backlight",
-    "format": "󰃠 ",
+    "format": "{icon}  {percent}%",
+    "format-icons": [ 
+      "󰃞", 
+      "󰃟", 
+      "󰃠"  
+    ],
     "tooltip": false,
     "scroll-step": 5
   },
