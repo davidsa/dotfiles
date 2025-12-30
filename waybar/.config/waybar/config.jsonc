@@ -40,12 +40,14 @@
   },
   "bluetooth": {
     "format": "󰂲",
-    "format-connected": "",
-    "format-connected-battery": " {device_battery_percentage}%",
-    "format-disabled": "󰂲",
+    "format-connected": "󰂱",
+    "format-connected-battery": "󰂱 {device_battery_percentage}%",
+    "format-disabled": "󰂭",
+    "format-on": "",
     "format-off": "󰂲",
     "format-no-controller": "󰂲",
-    "tooltip-format": "{device_alias}",
+    "tooltip-format-connected": "{device_alias}",
+    "tooltip-format": "{status}",
     "on-click": "~/.config/waybar/scripts/bluetooth-menu.fish",
     "on-click-right": "~/.config/waybar/scripts/bluetooth-toggle.fish"
   },

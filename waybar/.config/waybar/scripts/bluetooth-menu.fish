@@ -4,6 +4,8 @@ if not bluetoothctl show | grep -q "Powered: yes"
     bluetoothctl power on > /dev/null
 end
 
+bluetoothctl scan on & sleep 3
+
 # Get devices: MAC \t NAME \t STATUS
 set devices (
     bluetoothctl devices | while read -l prefix mac name
