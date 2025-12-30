@@ -60,6 +60,10 @@ function ls
     eza --group-directories-first --icons $argv
 end
 
+function l
+    eza --group-directories-first --icons -1 $argv
+end
+
 # Common shortcuts
 function ll
     eza -l --group-directories-first --icons $argv
