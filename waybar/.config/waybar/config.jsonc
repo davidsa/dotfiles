@@ -3,6 +3,7 @@
   "position": "top",
   "height": 30,
   "modules-left": [
+    "hyprland/window"
   ],
   "modules-center": [
     "hyprland/workspaces"
@@ -48,7 +49,7 @@
     "format-no-controller": "󰂲",
     "tooltip-format-connected": "{device_alias}",
     "tooltip-format": "{status}",
-    "on-click": "~/.config/waybar/scripts/bluetooth-menu.fish",
+    "on-click": "alacritty -e bluetui",
     "on-click-right": "~/.config/waybar/scripts/bluetooth-toggle.fish"
   },
   "battery": {
@@ -58,10 +59,9 @@
     },
     "format": "{icon}",
     "format-charging": "󰂄",
-    "format-full": "󰁹",
     "tooltip": false,
     "format-icons": [
-      "󰁺", 
+      "󰂃", 
       "󰁻", 
       "󰁼", 
       "󰁽", 
@@ -85,8 +85,8 @@
     "scroll-step": 5
   },
   "clock": {
-    "format": "{:%I:%M%p %d/%m/%y}",
-    "tooltip": false
+    "format": "{:%I:%M%p}",
+    "tooltip-format": "{:%d/%m/%y}"
   },
   "custom/power": {
     "format": "⏻",
