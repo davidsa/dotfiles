@@ -1,9 +1,9 @@
 #!/usr/bin/env fish
 
 set options \
-    "󰤄 Hibernate" \
-    " Restart" \
-    "󰐥 Power Off"
+    "󰤄  Hibernate" \
+    "  Restart" \
+    "󰐥  Power Off"
 
 set choice (printf "%s\n" $options | wofi --dmenu -i -W 400 -H 200 -p "Power")
 
