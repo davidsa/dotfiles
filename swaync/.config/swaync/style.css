@@ -1,0 +1,58 @@
+@define-color noti-bg #1f1f28;        
+@define-color text-color #dcd7ba;     
+@define-color body-color #c8c093;     
+@define-color low-urgency #76946a;    
+@define-color normal-urgency #7e9cd8; 
+@define-color critical-urgency #c34043; 
+@define-color close-bg #D27E99;
+@define-color close-hover #E46876;
+
+.notification {
+    background: @noti-bg;
+    color: @text-color;
+    padding: 8px 10px;
+    font-family: "DejaVuSansM Nerd Font", monospace;
+}
+
+.notification-default-action:hover {
+  background: @noti-bg;
+}
+
+.title {
+    font-weight: bold;
+    color: @text-color;
+}
+
+.body {
+    color: @body-color;
+}
+
+.icon, .app-icon, .image {
+    margin-right: 8px;
+}
+
+.low {
+    border-color: @low-urgency;
+}
+
+.normal {
+    border-color: @normal-urgency;
+}
+
+.critical {
+    border-color: @critical-urgency;
+}
+
+.notification:hover {
+  background: @noti-bg;
+}
+
+.close-button {
+    background: @close-bg;
+    border-radius: 6px;
+    padding: 2px 5px;
+}
+
+.close-button:hover {
+    background: @close-hover;
+}
