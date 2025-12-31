@@ -17,12 +17,6 @@
     "clock",
     "custom/power"
   ],
-  "hyprland/workspaces": {
-    "persistent-workspaces": {
-      "HDMI-A-1": [1,2,3],
-      "eDP-1": [4,5]
-    }
-  },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-muted": "󰝟",

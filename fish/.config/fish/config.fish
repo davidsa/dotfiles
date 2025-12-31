@@ -17,7 +17,7 @@ set SPACEFISH_DIR_COLOR 7AA89F
 set SPACEFISH_GIT_STATUS_COLOR FF9E64
 
 alias vim='nvim'
-
+alias cd='z'
 alias gs='git status'
 alias ga='git add .'
 alias gb='git switch -f (git branch | fzf | string trim)'
