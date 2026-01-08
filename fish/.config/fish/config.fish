@@ -40,6 +40,7 @@ alias di='docker images'
 alias dip='docker image prune'
 
 alias flushdns="sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
+alias ld="lazydocker"
 
 # ASDF configuration code
 if test -z $ASDF_DATA_DIR
