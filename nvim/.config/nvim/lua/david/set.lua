@@ -10,9 +10,23 @@ vim.opt.smartcase = true
 
 vim.opt.termguicolors = true
 
+vim.opt.number = true
+
 -- Clipboard
 vim.opt.clipboard = "unnamedplus,unnamed"
 
+-- Clipboard for WSL
+vim.g.clipboard = {
+  name = "win32yank",
+  copy = {
+    ["+"] = "win32yank.exe -i",
+    ["*"] = "win32yank.exe -i",
+  },
+  paste = {
+    ["+"] = "win32yank.exe -o",
+    ["*"] = "win32yank.exe -o",
+  },
+}
 -- Splits
 vim.opt.splitright = true
 vim.opt.splitbelow = true
