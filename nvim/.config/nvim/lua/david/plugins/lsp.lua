@@ -36,12 +36,20 @@ return {
         capabilities = capabilities,
       })
 
-      lspconfig.eslint.setup({
-        capabilities = capabilities,
-      })
+      lspconfig.tailwindcss.setup({})
 
       lspconfig.gopls.setup({
         capabilities = capabilities,
+      })
+
+      local dotnet_root = vim.fn.trim(vim.fn.system("asdf where dotnet 10.0.101 2>/dev/null"))
+
+      lspconfig.csharp_ls.setup({
+        capabilities = capabilities,
+        cmd_env = {
+          DOTNET_ROOT = dotnet_root,
+          DOTNET_ROOT_X64 = dotnet_root,
+        }
       })
 
       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
@@ -65,7 +73,7 @@ return {
       {
         "SirVer/ultisnips",
         config = function()
-          vim.g.UltiSnipsSnippetDirectories = { "~/workspace/Dot-Files/snippets" }
+          vim.g.UltiSnipsSnippetDirectories = { "~/.config/snippets" }
         end,
       },
       { "quangnguyen30192/cmp-nvim-ultisnips", opts = {} },
