@@ -174,6 +174,10 @@ function gsf
   git switch -f $argv
 end
 
+function glo 
+  git log --oneline $argv
+end
+
 function dex
   docker exec -it $argv bash
 end
