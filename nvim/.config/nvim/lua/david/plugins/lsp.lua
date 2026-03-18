@@ -1,15 +1,19 @@
 return {
 
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     lazy = false,
     opts = {},
   },
   {
-    "williamboman/mason-lspconfig.nvim",
-    lazy = false,
+    "mason-org/mason-lspconfig.nvim",
     opts = {
       auto_install = true,
+      automatic_enable = true,
+    },
+    dependencies = {
+      "mason-org/mason.nvim",
+      "neovim/nvim-lspconfig",
     },
   },
   {
@@ -18,11 +22,15 @@ return {
       { "hrsh7th/cmp-nvim-lsp" },
     },
     config = function()
-      local lspconfig = require("lspconfig")
       local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-      lspconfig.lua_ls.setup({
+      -- Apply capabilities to all LSP servers
+      vim.lsp.config("*", {
         capabilities = capabilities,
+      })
+
+      -- Lua
+      vim.lsp.config.lua_ls = {
         settings = {
           Lua = {
             diagnostics = {
@@ -30,28 +38,21 @@ return {
             },
           },
         },
-      })
+      }
 
-      lspconfig.ts_ls.setup({
-        capabilities = capabilities,
-      })
+      -- TypeScript
+      vim.lsp.config.ts_ls = {}
 
-      lspconfig.tailwindcss.setup({})
+      -- Tailwind
+      vim.lsp.config.tailwindcss = {}
 
-      lspconfig.gopls.setup({
-        capabilities = capabilities,
-      })
+      -- Go
+      vim.lsp.config.gopls = {}
 
-      local dotnet_root = vim.fn.trim(vim.fn.system("asdf where dotnet 10.0.101 2>/dev/null"))
+      -- Elixir
+      vim.lsp.config.elixirls = {}
 
-      lspconfig.csharp_ls.setup({
-        capabilities = capabilities,
-        cmd_env = {
-          DOTNET_ROOT = dotnet_root,
-          DOTNET_ROOT_X64 = dotnet_root,
-        }
-      })
-
+      -- Keymaps
       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
       vim.keymap.set("n", "gd", "<cmd>lua vim.lsp.buf.definition()<cr>")
       vim.keymap.set("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<cr>")
