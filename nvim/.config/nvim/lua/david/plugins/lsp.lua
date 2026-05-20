@@ -63,6 +63,9 @@ return {
         "SirVer/ultisnips",
         config = function()
           vim.g.UltiSnipsSnippetDirectories = { "~/.config/snippets" }
+          vim.g.UltiSnipsExpandTrigger = "<C-j>"
+          vim.g.UltiSnipsJumpForwardTrigger = "<C-j>"
+          vim.g.UltiSnipsJumpBackwardTrigger = "<C-k>"
         end,
       },
       { "quangnguyen30192/cmp-nvim-ultisnips", opts = {} },

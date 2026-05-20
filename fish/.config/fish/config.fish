@@ -1,21 +1,6 @@
 set EDITOR "nvim"
 set -U fish_greeting
 
-set SPACEFISH_TIME_SHOW false
-set SPACEFISH_USER_SHOW always
-set SPACEFISH_PACKAGE_SHOW false	
-set SPACEFISH_DIR_PREFIX ""
-set SPACEFISH_PROMPT_SEPARATE_LINE false
-set SPACEFISH_GIT_BRANCH_COLOR 957FB8
-set SPACEFISH_DOCKER_SHOW false
-set SPACEFISH_GIT_PREFIX ""
-set SPACEFISH_DOCKER_SHOW false
-
-# Prompt ColorsFF9E64
-set SPACEFISH_USER_COLOR D27E99
-set SPACEFISH_DIR_COLOR 7AA89F
-set SPACEFISH_GIT_STATUS_COLOR FF9E64
-
 alias vim='nvim'
 alias cd='z'
 alias gs='git status'
@@ -195,3 +180,5 @@ function mux
 end 
 
 zoxide init fish | source
+
+starship init fish | source
