@@ -1,37 +1,46 @@
 return {
-	{
-		"nvim-treesitter/nvim-treesitter",
-		branch = "master",
-		build = ":TSUpdate",
-		config = function()
-			require("nvim-treesitter.configs").setup({
-				-- Install parsers synchronously (only applied to `ensure_installed`)
-				sync_install = false,
+  {
+    "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
+    build = ":TSUpdate",
+    config = function()
+      -- Install parsers (no-op if already installed; runs async).
+      require("nvim-treesitter").install({
+        "markdown",
+        "markdown_inline",
+        "lua",
+        "vim",
+        "vimdoc",
+        "typescript",
+        "tsx",
+        "javascript",
+        "html",
+        "css",
+        "json",
+        "yaml",
+        "go",
+        "elixir",
+        "bash",
+        "regex",
+        "query",
+        "diff",
+        "gitcommit",
+        "git_rebase",
+        "gitignore",
+        "gitattributes",
+      })
 
-				-- Automatically install missing parsers when entering buffer
-				-- Recommendation: set to false if you don't have `tree-sitter` CLI installed locally
-				auto_install = true,
-
-				highlight = {
-					enable = true,
-
-					-- Setting this to true will run `:h syntax` and tree-sitter at the same time.
-					-- Set this to `true` if you depend on 'syntax' being enabled (like for indentation).
-					-- Using this option may slow down your editor, and you may see some duplicate highlights.
-					-- Instead of true it can also be a list of languages
-					additional_vim_regex_highlighting = false,
-				},
-
-				indent = {
-					-- this is not working right now
-					enable = false,
-				},
-
-				endwise = {
-					enable = true,
-				},
-			})
-		end,
-	},
-	{ "RRethy/nvim-treesitter-endwise" },
+      -- Enable treesitter highlighting + (experimental) indent for any
+      -- filetype that has a parser available.
+      vim.api.nvim_create_autocmd("FileType", {
+        callback = function(args)
+          local ok = pcall(vim.treesitter.start, args.buf)
+          if ok then
+            vim.bo[args.buf].indentexpr = "v:lua.require'nvim-treesitter'.indentexpr()"
+          end
+        end,
+      })
+    end,
+  },
 }

@@ -30,7 +30,7 @@ return {
       })
 
       -- Lua
-      vim.lsp.config.lua_ls = {
+      vim.lsp.config("lua_ls", {
         settings = {
           Lua = {
             diagnostics = {
@@ -38,19 +38,7 @@ return {
             },
           },
         },
-      }
-
-      -- TypeScript
-      vim.lsp.config.ts_ls = {}
-
-      -- Tailwind
-      vim.lsp.config.tailwindcss = {}
-
-      -- Go
-      vim.lsp.config.gopls = {}
-
-      -- Elixir
-      vim.lsp.config.elixirls = {}
+      })
 
       -- Keymaps
       vim.keymap.set("n", "K", "<cmd>lua vim.lsp.buf.hover()<cr>")
@@ -64,7 +52,7 @@ return {
       vim.keymap.set({ "n", "x" }, "<F3>", "<cmd>lua vim.lsp.buf.format({async = true})<cr>")
       vim.keymap.set("n", "<F4>", "<cmd>lua vim.lsp.buf.code_action()<cr>")
       vim.keymap.set("n", "gk", function()
-        vim.diagnostic.open_float(0, { scope = "line" })
+        vim.diagnostic.open_float({ scope = "line" })
       end)
     end,
   },
